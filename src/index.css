@@ -8,8 +8,6 @@
   }
 }
 
-
-
 @font-face {
   font-family: "GilroyBold";
   src: local("GilroyBold"),
@@ -28,15 +26,13 @@
     url("./fonts/Gilroy-Thin.ttf") format("truetype");
 }
 
-<<<<<<< HEAD
 @font-face {
   font-family: "GilroyExtraBold";
   src: local("GilroyExtraBold"),
     url("./fonts/Gilroy-ExtraBold.ttf") format("truetype");
 }
 
-=======
->>>>>>> 92a88571789106277d1019d05f814ed628bf26b6
+
 .Gilroy-Bold {
   font-family: "GilroyBold";
 }
@@ -47,11 +43,10 @@
 
 .Gilroy-Thin {
   font-family: "GilroyThin";
-<<<<<<< HEAD
+
 }
 
 .Gilroy-ExtraBold {
   font-family: "GilroyExtraBold";
-=======
->>>>>>> 92a88571789106277d1019d05f814ed628bf26b6
+
 }

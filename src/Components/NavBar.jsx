@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className='text-center'>
         <Link to='/'>
           {/* <p className='text-sm '>LOGO</p> */}
-          <img src='/Final-03.png' alt='' className='' />
+          <img src='/Food-logo.svg' alt='' className='' />
         </Link>
       </div>
 
@@ -37,49 +37,49 @@ const Navbar = () => {
           <div className='flex flex-col items-center text-sm lg:flex-row justify-evenly md:flex-row xl:flex-row'>
             <Link to='/Home'>
               <li
-                className={`text-[18px] ${
+                className={`text-[18px] font-normal ${
                   isActive('/Home')
-                    ? 'Gilroy-Medium text-[#EC9047]'
-                    : 'Gilroy-Light text-[#FFFFFF]'
+                    ? 'Gilroy-Regular text-[#EC9047]'
+                    : 'Gilroy-Regular text-[#FFFFFF]'
                 }`}
               >
                 Home
               </li>
             </Link>
-            <Link to='/List'>
+            <Link to='/whatmakes'>
               <li
-                className={`mx-0 md:mx-10 text-[18px] ${
+                className={`mx-0 md:mx-10 font-normal text-[18px] ${
                   isActive('/whatmakes')
-                    ? 'Gilroy-Medium text-[#EC9047]'
-                    : 'Gilroy-Light text-[#FFFFFF]'
+                    ? 'Gilroy-Regular text-[#EC9047]'
+                    : 'Gilroy-Regular text-[#FFFFFF]'
                 }`}
               >
                 what makes us different{' '}
               </li>
             </Link>
-            <Link to='/AllBook'>
+            <Link to='/Discover'>
               <li
-                className={`text-[18px] ${
+                className={`text-[18px] font-normal${
                   isActive('/Discover')
-                    ? 'Gilroy-Medium text-[#EC9047]'
-                    : 'Gilroy-Light text-[#FFFFFF]'
+                    ? 'Gilroy-Regular text-[#EC9047]'
+                    : 'Gilroy-Regular text-[#FFFFFF]'
                 }`}
               >
                 Discover more
               </li>
             </Link>
-            <Link to='/Subscription'>
+            <Link to='/Nutrition'>
               <li
-                className={`mx-0 md:mx-10 text-[18px] ${
+                className={`mx-0 md:mx-10 text-[18px] font-normal${
                   isActive('/Nutrition')
-                    ? 'Gilroy-Medium text-[#EC9047]'
-                    : 'Gilroy-Light text-[#FFFFFF]'
+                    ? 'Gilroy-Regular text-[#EC9047]'
+                    : 'Gilroy-Regular text-[#FFFFFF]'
                 }`}
               >
                 Nutrition
               </li>
             </Link>
-            <Link to='/Write'>
+            <Link to='/ContactUs'>
               <li className='me-10'>
                 <button className='border-0 rounded-full	font-custom bg-[#EC9047] py-1 px-10'>
                   Contact Us

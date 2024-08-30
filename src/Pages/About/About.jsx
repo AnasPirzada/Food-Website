@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../Components/NavBar.jsx';
+import NavBar from '../../Components/NavBar.jsx';
 export const About = () => {
   return (
     <div>
