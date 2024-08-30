@@ -12,8 +12,8 @@ const Navbar = () => {
   const isActive = path => location.pathname === path;
 
   return (
-    <nav className='fixed z-10 flex justify-between w-screen py-2 md:ps-10 ps-2'>
-      <div className='text-center'>
+    <nav className='fixed w-[95%] custom-border top-0 z-10 flex justify-between mx-auto py-2 md:ps-10 ps-2'>
+      <div className='text-center '>
         <Link to='/'>
           {/* <p className='text-sm '>LOGO</p> */}
           <img src='/Food-logo.svg' alt='' className='' />
@@ -29,15 +29,15 @@ const Navbar = () => {
         <div className='line3'></div>
       </div>
       <div
-        className={`nav-links px-0 py-0.7vw w-100 pe-0 md:pe-10 flex list-none justify-between sm:justify-normal items-center uppercase ${
+        className={`nav-links px-0 w-[60%] py-0.7vw w-100 pe-0 md:pe-10 flex list-none justify-between sm:justify-normal items-center uppercase ${
           isOpen ? 'open' : ''
         }`}
       >
-        <ul className='flex justify-between list-none	'>
-          <div className='flex flex-col items-center text-sm lg:flex-row justify-evenly md:flex-row xl:flex-row'>
+        <ul className='flex justify-between text-nowrap list-none	'>
+          <div className='flex flex-col  items-center text-sm lg:flex-row justify-evenly md:flex-row xl:flex-row'>
             <Link to='/Home'>
               <li
-                className={`text-[18px] font-normal ${
+                className={`text-[14px] font-normal ${
                   isActive('/Home')
                     ? 'Gilroy-Regular text-[#EC9047]'
                     : 'Gilroy-Regular text-[#FFFFFF]'
@@ -48,7 +48,7 @@ const Navbar = () => {
             </Link>
             <Link to='/whatmakes'>
               <li
-                className={`mx-0 md:mx-10 font-normal text-[18px] ${
+                className={`mx-0 md:mx-10 font-normal text-[14px] ${
                   isActive('/whatmakes')
                     ? 'Gilroy-Regular text-[#EC9047]'
                     : 'Gilroy-Regular text-[#FFFFFF]'
@@ -59,7 +59,7 @@ const Navbar = () => {
             </Link>
             <Link to='/Discover'>
               <li
-                className={`text-[18px] font-normal${
+                className={`text-[14px] font-normal${
                   isActive('/Discover')
                     ? 'Gilroy-Regular text-[#EC9047]'
                     : 'Gilroy-Regular text-[#FFFFFF]'
@@ -70,7 +70,7 @@ const Navbar = () => {
             </Link>
             <Link to='/Nutrition'>
               <li
-                className={`mx-0 md:mx-10 text-[18px] font-normal${
+                className={`mx-0 md:mx-10 text-[14px] font-normal${
                   isActive('/Nutrition')
                     ? 'Gilroy-Regular text-[#EC9047]'
                     : 'Gilroy-Regular text-[#FFFFFF]'
