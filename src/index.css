@@ -28,15 +28,27 @@
     url("./fonts/Gilroy-Thin.ttf") format("truetype");
 }
 
-<<<<<<< HEAD
+
 @font-face {
   font-family: "GilroyExtraBold";
   src: local("GilroyExtraBold"),
     url("./fonts/Gilroy-ExtraBold.ttf") format("truetype");
 }
 
-=======
->>>>>>> 92a88571789106277d1019d05f814ed628bf26b6
+@font-face {
+  font-family: "Gilroy-Light";
+  src: local("Gilroy-Light"),
+    url("./fonts/Gilroy-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: local("Gilroy-SemiBold"),
+    url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
+}
+.Gilroy-SemiBold{
+  font-family: "Gilroy-SemiBold";
+}
+
 .Gilroy-Bold {
   font-family: "GilroyBold";
 }
@@ -47,11 +59,10 @@
 
 .Gilroy-Thin {
   font-family: "GilroyThin";
-<<<<<<< HEAD
+
 }
 
 .Gilroy-ExtraBold {
   font-family: "GilroyExtraBold";
-=======
->>>>>>> 92a88571789106277d1019d05f814ed628bf26b6
+
 }
