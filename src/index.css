@@ -8,8 +8,6 @@
   }
 }
 
-
-
 @font-face {
   font-family: "GilroyBold";
   src: local("GilroyBold"),
@@ -28,6 +26,12 @@
     url("./fonts/Gilroy-Thin.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "GilroyExtraBold";
+  src: local("GilroyExtraBold"),
+    url("./fonts/Gilroy-ExtraBold.ttf") format("truetype");
+}
+
 .Gilroy-Bold {
   font-family: "GilroyBold";
 }
@@ -38,4 +42,8 @@
 
 .Gilroy-Thin {
   font-family: "GilroyThin";
+}
+
+.Gilroy-ExtraBold {
+  font-family: "GilroyExtraBold";
 }
