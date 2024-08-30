@@ -8,8 +8,6 @@
   }
 }
 
-
-
 @font-face {
   font-family: "GilroyBold";
   src: local("GilroyBold"),
@@ -49,6 +47,12 @@
   font-family: "Gilroy-SemiBold";
 }
 
+  font-family: "GilroyBlack";
+  src: local("GilroyBlack"),
+    url("./fonts/Gilroy-Black.ttf") format("truetype");
+}
+
+
 .Gilroy-Bold {
   font-family: "GilroyBold";
 }
@@ -64,5 +68,10 @@
 
 .Gilroy-ExtraBold {
   font-family: "GilroyExtraBold";
+
+}
+
+.Gilroy-Black {
+  font-family: "GilroyBlack";
 
 }
