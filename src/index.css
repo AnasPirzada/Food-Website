@@ -47,12 +47,6 @@
   font-family: "Gilroy-SemiBold";
 }
 
-  font-family: "GilroyBlack";
-  src: local("GilroyBlack"),
-    url("./fonts/Gilroy-Black.ttf") format("truetype");
-}
-
-
 .Gilroy-Bold {
   font-family: "GilroyBold";
 }
