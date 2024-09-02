@@ -26,6 +26,7 @@
     url("./fonts/Gilroy-Thin.ttf") format("truetype");
 }
 
+
 @font-face {
   font-family: "GilroyExtraBold";
   src: local("GilroyExtraBold"),
@@ -33,9 +34,17 @@
 }
 
 @font-face {
-  font-family: "GilroyBlack";
-  src: local("GilroyBlack"),
-    url("./fonts/Gilroy-Black.ttf") format("truetype");
+  font-family: "Gilroy-Light";
+  src: local("Gilroy-Light"),
+    url("./fonts/Gilroy-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: local("Gilroy-SemiBold"),
+    url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
+}
+.Gilroy-SemiBold{
+  font-family: "Gilroy-SemiBold";
 }
 
 @font-face {
