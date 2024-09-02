@@ -11,7 +11,9 @@ export const VideoProvider = ({ children }) => {
   };
 
   return (
-    <VideoContext.Provider value={{ shouldPlayVideo, handlePlayVideo }}>
+    <VideoContext.Provider
+      value={{ shouldPlayVideo, setShouldPlayVideo, handlePlayVideo }}
+    >
       {children}
     </VideoContext.Provider>
   );

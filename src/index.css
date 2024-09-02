@@ -38,6 +38,12 @@
     url("./fonts/Gilroy-Black.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "GilroySemiBold";
+  src: local("GilroySemiBold"),
+    url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
+}
+
 
 .Gilroy-Bold {
   font-family: "GilroyBold";
@@ -59,5 +65,10 @@
 
 .Gilroy-Black {
   font-family: "GilroyBlack";
+
+}
+
+.Gilroy-SemiBold {
+  font-family: "GilroySemiBold";
 
 }

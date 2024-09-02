@@ -15,22 +15,31 @@ export const Welcome = () => {
       const offset = e.offsetX;
       const left = `${(offset / width) * 100}%`;
 
-      spanRef.current.animate({ left }, { duration: 250, fill: 'forwards' });
+      if (spanRef.current) {
+        spanRef.current.animate({ left }, { duration: 250, fill: 'forwards' });
+      }
     };
 
     const handleMouseLeave = () => {
-      spanRef.current.animate(
-        { left: '50%' },
-        { duration: 100, fill: 'forwards' }
-      );
+      if (spanRef.current) {
+        spanRef.current.animate(
+          { left: '50%' },
+          { duration: 100, fill: 'forwards' }
+        );
+      }
     };
 
-    btnRef.current.addEventListener('mousemove', handleMouseMove);
-    btnRef.current.addEventListener('mouseleave', handleMouseLeave);
+    const btnElement = btnRef.current;
+    if (btnElement) {
+      btnElement.addEventListener('mousemove', handleMouseMove);
+      btnElement.addEventListener('mouseleave', handleMouseLeave);
+    }
 
     return () => {
-      btnRef.current.removeEventListener('mousemove', handleMouseMove);
-      btnRef.current.removeEventListener('mouseleave', handleMouseLeave);
+      if (btnElement) {
+        btnElement.removeEventListener('mousemove', handleMouseMove);
+        btnElement.removeEventListener('mouseleave', handleMouseLeave);
+      }
     };
   }, []);
 
@@ -55,27 +64,17 @@ export const Welcome = () => {
           </div>
 
           <div>
-            <Link
-              onClick={handlePlayVideo}
-              to={{
-                pathname: '/Home',
-              }}
-            >
+            <Link onClick={handlePlayVideo} to='/Home'>
               <motion.button
                 whileTap={{ scale: 0.985 }}
                 ref={btnRef}
-                className='relative w-full max-w-xs overflow-hidden border-[#EC9047CC] bottom-1 rounded-full bg-transparent drop-shadow-[0px_2px_24px_0px_#00000040] p-[14px_40px_14px_40px] Gilroy-Regular font-normal text-4xl text-white group transition-colors duration-300 ease-in-out'
+                className='relative w-full max-w-xs overflow-hidden border-2 border-[#EC9047CC] rounded-full bg-transparent drop-shadow-[0px_2px_24px_0px_#00000040] p-[14px_40px_14px_40px] Gilroy-Regular font-normal text-4xl text-white group transition-colors duration-300 ease-in-out'
               >
                 Get started
                 <span
                   ref={spanRef}
                   className='pointer-events-none absolute left-[50%] top-[50%] h-32 w-32 -translate-x-[50%] -translate-y-[50%] rounded-full bg-[#EC9047CC] group-hover:bg-[#EC9047CC] transition-colors duration-300 ease-in-out'
                 />
-                <style jsx>{`
-                  .group:hover .group-hover-text {
-                    color: white;
-                  }
-                `}</style>
                 <span className='group-hover-text absolute inset-0 flex items-center justify-center'>
                   Get started
                 </span>

@@ -1,8 +1,9 @@
+// src/Components/NavBar.js
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ backgroundcolor }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNav = () => {
@@ -12,11 +13,13 @@ const Navbar = () => {
   const isActive = path => location.pathname === path;
 
   return (
-    <nav className='fixed w-[95%] custom-border top-0 z-10 flex justify-between mx-auto py-2 md:ps-10 ps-2'>
-      <div className='text-center '>
+    <nav
+      className='fixed w-[100%] custom-border  top-0 z-10 flex justify-between mx-auto py-2 md:ps-10 ps-2'
+      style={{ backgroundColor: backgroundcolor }}
+    >
+      <div className='text-center'>
         <Link to='/'>
-          {/* <p className='text-sm '>LOGO</p> */}
-          <img src='/Food-logo.svg' alt='' className='' />
+          <img src='/Food-logo.svg' alt='Logo' />
         </Link>
       </div>
 
@@ -33,8 +36,8 @@ const Navbar = () => {
           isOpen ? 'open' : ''
         }`}
       >
-        <ul className='flex justify-between text-nowrap list-none	'>
-          <div className='flex flex-col  items-center text-sm lg:flex-row justify-evenly md:flex-row xl:flex-row'>
+        <ul className='flex justify-between text-nowrap list-none'>
+          <div className='flex flex-col items-center text-sm lg:flex-row justify-evenly md:flex-row xl:flex-row'>
             <Link to='/Home'>
               <li
                 className={`text-[14px] font-normal ${
@@ -54,7 +57,7 @@ const Navbar = () => {
                     : 'Gilroy-Regular text-[#FFFFFF]'
                 }`}
               >
-                what makes us different{' '}
+                what makes us different
               </li>
             </Link>
             <Link to='/Discover'>
@@ -81,7 +84,7 @@ const Navbar = () => {
             </Link>
             <Link to='/ContactUs'>
               <li className='me-10'>
-                <button className='border-0 rounded-full	font-custom bg-[#EC9047] py-1 px-10'>
+                <button className='border-0 rounded-full font-custom bg-[#EC9047] py-1 px-10'>
                   Contact Us
                 </button>
               </li>
