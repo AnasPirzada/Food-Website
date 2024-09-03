@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Whatmakes = () => {
-  return <div>WhatMakes</div>;
+  return (
+    <div></div>
+  )
 };
 export default Whatmakes;
