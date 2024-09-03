@@ -127,7 +127,7 @@ const Home = () => {
       <div ref={topSectionRef} className='w-full h-screen'>
         <video
           ref={videoRef}
-          className='absolute top-0 left-0 w-full h-full object-cover opacity-50 transition-opacity duration-500 bg-black'
+          className='absolute top-0 left-0 w-full h-full object-cover  transition-opacity duration-500 bg-black'
           src={`/homevedio.mp4`}
           loop
           muted={false}
@@ -170,7 +170,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div ref={menuRef} className='w-full h-screen bg-[#FFFFFF]  text-black'>
+      <div ref={menuRef} className='w-full h-[100vh] overflow-auto bg-[#FFFFFF]  text-black'>
         <MenuSection />
       </div>
     </div>

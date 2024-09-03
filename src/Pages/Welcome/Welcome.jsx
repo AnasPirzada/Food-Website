@@ -47,7 +47,7 @@ export const Welcome = () => {
     <div>
       <div className='relative w-full h-screen overflow-hidden'>
         <video
-          className='absolute top-0 left-0 w-full h-full object-cover opacity-50 transition-opacity duration-500'
+          className='absolute top-0 left-0 w-full h-full object-cover  transition-opacity duration-500'
           src={`/homevedio.mp4`}
           loop
           muted
