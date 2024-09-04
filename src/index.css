@@ -15,6 +15,12 @@
 }
 
 @font-face {
+  font-family: "GilroyMedium";
+  src: local("GilroyMedium"),
+    url("./fonts/Gilroy-Medium.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "GilroyRegular";
   src: local("GilroyRegular"),
     url("./fonts/Gilroy-Regular.ttf") format("truetype");
@@ -34,16 +40,22 @@
 }
 
 @font-face {
-  font-family: "Gilroy-Light";
-  src: local("Gilroy-Light"),
+  font-family: "GilroyLight";
+  src: local("GilroyLight"),
     url("./fonts/Gilroy-Light.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Gilroy-SemiBold";
   src: local("Gilroy-SemiBold"),
     url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
 }
-.Gilroy-SemiBold{
+
+.Gilroy-Medium {
+  font-family: "GilroyMedium";
+}
+
+.Gilroy-SemiBold {
   font-family: "Gilroy-SemiBold";
 }
 
@@ -80,4 +92,16 @@
 .Gilroy-SemiBold {
   font-family: "GilroySemiBold";
 
+}
+
+.Gilroy-Light {
+  font-family: "GilroyLight";
+
+}
+
+
+@media (min-width: 768px) {
+  .block {
+    display: none;
+  }
 }

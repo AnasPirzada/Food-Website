@@ -1,4 +1,3 @@
-// MenuSection.js
 import React, { useState } from 'react';
 import Card from './Card';
 
@@ -14,11 +13,13 @@ const componentsMap = {
 const MenuSection = () => {
   const [selectedTab, setSelectedTab] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
+  const [isMenuVisible, setIsMenuVisible] = useState(false); // State to control menu visibility
   const itemsPerPage = 6;
 
   const handleTabClick = tab => {
     setSelectedTab(tab);
     setCurrentPage(1); // Reset to page 1 when tab changes
+    setIsMenuVisible(false); // Hide menu after selection
   };
 
   const cardsData = [
@@ -26,6 +27,7 @@ const MenuSection = () => {
       image:
         'https://images.unsplash.com/photo-1672099260380-4ba66eead8ed?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Tasty Tacos',
+      subheading: 'Combo Plate ( flank/flap/skirt)',
       description:
         'perfectly marinated CARNE ASADA and 4 LARGE SIZE soft corn tortillas, homemade creamy style smoke-flavored black beans and abuelita (grandma) style rice. All served on the side.',
       price: '$5',
@@ -35,6 +37,8 @@ const MenuSection = () => {
       image:
         'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Big Burritos',
+      subheading: 'Combo Plate ( flank/flap/skirt)',
+
       description:
         'perfectly marinated CARNE ASADA and 4 LARGE SIZE soft corn tortillas, homemade creamy style smoke-flavored black beans and abuelita (grandma) style rice. All served on the side.',
       price: '$7',
@@ -44,6 +48,8 @@ const MenuSection = () => {
       image:
         'https://images.unsplash.com/photo-1618043404023-185423114c78?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Raspados',
+      subheading: 'Combo Plate ( flank/flap/skirt)',
+
       description:
         'perfectly marinated CARNE ASADA and 4 LARGE SIZE soft corn tortillas, homemade creamy style smoke-flavored black beans and abuelita (grandma) style rice. All served on the side.',
       price: '$3',
@@ -53,6 +59,8 @@ const MenuSection = () => {
       image:
         'https://plus.unsplash.com/premium_photo-1679397828457-8140565d6a57?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Cool Refreshments',
+      subheading: 'Combo Plate ( flank/flap/skirt)',
+
       description: 'Fresh drinks to cool you down.',
       price: '$2',
       categoryName: 'Refreshments',
@@ -228,10 +236,48 @@ const MenuSection = () => {
     setCurrentPage(pageNumber);
   };
 
+  const toggleMenu = () => {
+    setIsMenuVisible(!isMenuVisible);
+  };
+
   return (
     <div className='pt-24'>
       <div className='w-[80%] mx-auto'>
-        <div className='flex flex-col md:flex-row md:justify-between w-full items-center'>
+        {/* SVG Icon only visible on mobile */}
+        <div className='block md:hidden'>
+          <button className='relative group' onClick={toggleMenu}>
+            <div className='relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-[#EC9047] ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md'>
+              <div
+                className={`flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden ${
+                  isMenuVisible ? 'rotate-[0deg]' : ''
+                }`}
+              >
+                <div
+                  className={`bg-white h-[2px] w-7 transform transition-all duration-300 origin-left ${
+                    isMenuVisible ? 'rotate-[42deg] w-2/3' : ''
+                  } delay-150`}
+                ></div>
+                <div
+                  className={`bg-white h-[2px] w-7 rounded transform transition-all duration-300 ${
+                    isMenuVisible ? 'translate-x-10 opacity-0' : ''
+                  }`}
+                ></div>
+                <div
+                  className={`bg-white h-[2px] w-7 transform transition-all duration-300 origin-left ${
+                    isMenuVisible ? '-rotate-[42deg] w-2/3' : ''
+                  } delay-150`}
+                ></div>
+              </div>
+            </div>
+          </button>
+        </div>
+
+        {/* Tab Menu */}
+        <div
+          className={`${
+            isMenuVisible ? 'block' : 'hidden'
+          } md:block flex flex-col md:flex-row md:justify-between w-full items-center`}
+        >
           <div className='flex flex-wrap justify-between w-full text-center md:flex-nowrap md:space-x-4 mb-4 md:mb-0'>
             {Object.keys(componentsMap).map(tab => (
               <button
@@ -248,12 +294,14 @@ const MenuSection = () => {
             ))}
           </div>
         </div>
+
         <div className='mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 h-full'>
           {currentCards.map((card, index) => (
             <Card
               key={index}
               image={card.image}
               title={card.title}
+              subheading={card.subheading}
               description={card.description}
               price={card.price}
               categoryName={card.categoryName}
@@ -267,7 +315,7 @@ const MenuSection = () => {
               <li>
                 <a
                   href='#'
-                  className={`flex items-center justify-center px-4 h-10 ms-0 leading-tight rounded-s-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#282827]  dark:text-white dark:hover:bg-[#EC9047] dark:hover:text-white ${
+                  className={`flex items-center justify-center px-4 h-10 ms-0 leading-tight rounded-s-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#282827] dark:text-white dark:hover:bg-[#EC9047] dark:hover:text-white ${
                     currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''
                   }`}
                   onClick={() =>
