@@ -134,8 +134,8 @@ const Home = () => {
   return (
     <>
       <Navbar backgroundcolor={navbarBg} />
-      <div className='relative w-full h-screen overflow-hidden'>
-        <div ref={topSectionRef} className='w-full h-screen'>
+      <div className='relative w-full h-screen '>
+        <div ref={topSectionRef} className='w-full h-screen overflow-auto'>
           <video
             ref={videoRef}
             className='absolute top-0 left-0 w-full h-full object-cover  transition-opacity duration-500 bg-black'
@@ -183,12 +183,12 @@ const Home = () => {
 
         <div
           ref={menuRef}
-          className='w-full h-[100vh] overflow-auto bg-[#FFFFFF]  text-black'
+          className='w-full mb-32 overflow-auto bg-[#FFFFFF]  text-black'
         >
           <MenuSection />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

@@ -241,7 +241,7 @@ const MenuSection = () => {
   };
 
   return (
-    <div className='pt-24'>
+    <div className='pt-10'>
       <div className='w-[80%] mx-auto'>
         {/* SVG Icon only visible on mobile */}
         <div className='block md:hidden'>
@@ -295,7 +295,7 @@ const MenuSection = () => {
           </div>
         </div>
 
-        <div className='mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 h-full'>
+        <div className='mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 h-full'>
           {currentCards.map((card, index) => (
             <Card
               key={index}
