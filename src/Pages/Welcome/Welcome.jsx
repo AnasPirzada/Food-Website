@@ -55,7 +55,7 @@ export const Welcome = () => {
 
         <div className="bg-[url('/blurybg.png')] relative z-10 flex flex-col items-center justify-center w-full h-full bg-opacity-50">
           <div>
-            <h1 className='text-8xl capitalize drop-shadow-[0_4px_4px_rgba(255,255,255,1)] font-bold Gilroy-Bold text-white'>
+            <h1 className=' text-5xl lg:text-8xl capitalize drop-shadow-[0_4px_4px_rgba(255,255,255,1)] font-bold Gilroy-Bold text-white'>
               Welcome to
             </h1>
           </div>
