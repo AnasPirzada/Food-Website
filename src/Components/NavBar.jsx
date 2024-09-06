@@ -85,7 +85,7 @@ const Navbar = ({ backgroundcolor }) => {
             <Link to='/Contactus'>
               <li
                 className={`mx-0 md:mx-10 cursor-pointer text-[14px] font-normal${
-                  isActive('/Nutrition')
+                  isActive('/Contactus')
                     ? 'Gilroy-Regular text-[#EC9047]'
                     : 'Gilroy-Regular text-[#FFFFFF]'
                 }`}

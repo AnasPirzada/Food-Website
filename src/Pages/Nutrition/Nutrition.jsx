@@ -5,7 +5,7 @@ const Nutrition = () => {
   return (
     <>
       <Navbar backgroundcolor='#000000' />
-      <section className=''>
+      <section className='my-20'>
         <div className=''>
           <img
             src='/Neutrationimg.png'
@@ -43,7 +43,7 @@ const Nutrition = () => {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-12  mt-6 sm:mt-7 md:mt-8 shadow-md cursor-pointer'>
+          <div className='grid grid-cols-1 md:grid-cols-12  mt-10 sm:mt-10 md:mt-20 shadow-md cursor-pointer'>
             <div className='md:col-span-7 flex items-center relative group '>
               <div className='absolute top-0 right-0 w-full h-[3px] bg-[#EC9047] transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left z-50'></div>
               <div className='absolute top-0 left-0 h-full w-[3px] bg-[#EC9047] transition-all duration-300 ease-in-out transform scale-y-0 group-hover:scale-y-100 origin-top z-50 '></div>

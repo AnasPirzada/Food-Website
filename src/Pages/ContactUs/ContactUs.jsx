@@ -55,7 +55,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className='flex flex-col lg:flex-row justify-between w-full my-8 lg:my-12 space-y-4 lg:space-y-0 lg:space-x-4'>
+        <div className='flex flex-col lg:flex-row justify-between w-full my-12 lg:my-20 space-y-4 lg:space-y-0 lg:space-x-4'>
           <div className='flex items-center space-x-2'>
             <div className='bg-orange-500 w-[64px] h-[64px] lg:w-[88px] lg:h-[88px] flex justify-center items-center p-2 rounded-full text-white'>
               <img src='/ic_round-call.svg' alt='Phone' />
