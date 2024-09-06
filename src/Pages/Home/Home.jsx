@@ -142,6 +142,8 @@ const Home = () => {
             src={`/homevedio.mp4`}
             loop
             muted={false}
+            playsInline
+            autoPlay
           >
             Your browser does not support the video tag.
           </video>

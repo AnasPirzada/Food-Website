@@ -51,6 +51,8 @@ export const Welcome = () => {
           src={`/homevedio.mp4`}
           loop
           muted
+          playsInline
+          autoPlay
         ></video>
 
         <div className="bg-[url('/blurybg.png')] relative z-10 flex flex-col items-center justify-center w-full h-full bg-opacity-50">

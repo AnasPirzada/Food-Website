@@ -310,7 +310,7 @@ const MenuSection = () => {
         </div>
 
         <div className='flex justify-end items-center'>
-          <nav aria-label='Page navigation example'>
+          <div>
             <ul className='inline-flex list-none -space-x-px text-base h-10'>
               <li>
                 <a
@@ -357,7 +357,7 @@ const MenuSection = () => {
                 </a>
               </li>
             </ul>
-          </nav>
+          </div>
         </div>
       </div>
     </div>
