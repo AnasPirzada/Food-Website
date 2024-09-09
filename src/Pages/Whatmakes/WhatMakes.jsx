@@ -40,9 +40,11 @@ const Whatmakes = () => {
                 <br /> Marination Process
               </h1>
               <div className='flex justify-start items-center space-x-4 mb-8'>
-                <button className='bg-orange-500 Gilroy-SemiBold text-[20px] hover:bg-orange-600 text-white font-normal py-2 px-4 rounded-full'>
-                  Contact Us
-                </button>
+                <Link to='/Contactus'>
+                  <button className='bg-orange-500 Gilroy-SemiBold text-[20px] hover:bg-orange-600 text-white font-normal py-2 px-4 rounded-full'>
+                    Contact Us
+                  </button>
+                </Link>
                 <Link
                   to='/Home#menu'
                   className='text-[#191918] hover:text-[#EC9047] Gilroy-Regular hover:underline font-normal text-[20px]'

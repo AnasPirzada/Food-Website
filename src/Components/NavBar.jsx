@@ -32,7 +32,7 @@ const Navbar = ({ backgroundcolor }) => {
         <div className='line3'></div>
       </div>
       <div
-        className={`nav-links px-0 w-[75%] py-0.7vw w-100 pe-0 md:pe-10 flex list-none justify-between sm:justify-normal items-center uppercase ${
+        className={`nav-links px-0 w-[100%] md:w-[75%] py-0.7vw w-100 pe-0 md:pe-10 flex list-none justify-between sm:justify-normal items-center uppercase ${
           isOpen ? 'open' : ''
         }`}
       >

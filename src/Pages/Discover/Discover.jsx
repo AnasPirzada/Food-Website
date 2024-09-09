@@ -1,62 +1,43 @@
-// file: src/pages/Discover.js
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/NavBar';
 
 const videoList = [
   {
     id: 1,
-    src: '/homevedio.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-psd/flat-design-street-food-template_23-2149717413.jpg?w=1380&t=st=1725635125~exp=1725635725~hmac=f9d81b8cda3017c2bbc7f96adb3dc69e5b780d9b9b73de85e1ea715f55f0d907',
+    src: '/Burritos.mp4',
+    poster: '/Burritosvediothum.png', // Path to the video thumbnail image
+    isYouTube: false,
   },
   {
     id: 2,
-    src: '/Kitchen.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-vector/hand-drawn-recipes-youtube-thumbnail_23-2148937349.jpg?w=1380&t=st=1725635149~exp=1725635749~hmac=30d07e0678b6927fe8eb20e4d6bec5a5b365fc8caf3310d74c37d5bbe6b43e51',
+    src: '/Tacos.mp4',
+    poster: '/whatsapp-thumbnail.png',
+    isYouTube: false,
   },
   {
     id: 3,
-    src: '/homevedio.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-psd/flat-design-street-food-template_23-2149717413.jpg?w=1380&t=st=1725635125~exp=1725635725~hmac=f9d81b8cda3017c2bbc7f96adb3dc69e5b780d9b9b73de85e1ea715f55f0d907',
-  },
-  {
-    id: 4,
-    src: '/Kitchen.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-vector/hand-drawn-recipes-youtube-thumbnail_23-2148937349.jpg?w=1380&t=st=1725635149~exp=1725635749~hmac=30d07e0678b6927fe8eb20e4d6bec5a5b365fc8caf3310d74c37d5bbe6b43e51',
+    src: '/public/WhatsApp Video 2024-09-09 at 15.40.06_b10472d3.mp4',
+    poster: '/tacos-thumbnail.png',
+    isYouTube: false,
   },
   {
     id: 5,
-    src: '/homevedio.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-psd/flat-design-street-food-template_23-2149717413.jpg?w=1380&t=st=1725635125~exp=1725635725~hmac=f9d81b8cda3017c2bbc7f96adb3dc69e5b780d9b9b73de85e1ea715f55f0d907',
-  },
-  {
-    id: 6,
-    src: '/homevedio.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-psd/flat-design-street-food-template_23-2149717413.jpg?w=1380&t=st=1725635125~exp=1725635725~hmac=f9d81b8cda3017c2bbc7f96adb3dc69e5b780d9b9b73de85e1ea715f55f0d907',
-  },
-  {
-    id: 7,
-    src: '/homevedio.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-psd/flat-design-street-food-template_23-2149717413.jpg?w=1380&t=st=1725635125~exp=1725635725~hmac=f9d81b8cda3017c2bbc7f96adb3dc69e5b780d9b9b73de85e1ea715f55f0d907',
-  },
-  {
-    id: 8,
-    src: '/homevedio.mp4',
-    thumbnail:
-      'https://img.freepik.com/free-psd/flat-design-street-food-template_23-2149717413.jpg?w=1380&t=st=1725635125~exp=1725635725~hmac=f9d81b8cda3017c2bbc7f96adb3dc69e5b780d9b9b73de85e1ea715f55f0d907',
+    src: 'https://www.youtube.com/watch?v=Zng2mCdjyxE',
+    poster: 'https://img.youtube.com/vi/Zng2mCdjyxE/0.jpg', // YouTube thumbnail
+    isYouTube: true,
   },
 ];
 
 const Discover = () => {
-  const [selectedVideo, setSelectedVideo] = useState(videoList[0].src);
+  const [playingVideo, setPlayingVideo] = useState(null);
+
+  const handlePlayVideo = video => {
+    setPlayingVideo(video.id === playingVideo?.id ? null : video);
+  };
 
   return (
     <div className='relative w-full h-screen overflow-auto'>
@@ -70,60 +51,75 @@ const Discover = () => {
         </p>
       </div>
 
-      {/* Video Player */}
-      <div className='w-full lg:w-[90%] mx-auto mt-10 lg:mt-24'>
-        <div className='bg-[#D2D2D2] h-[300px] lg:h-[720px] w-full lg:w-[1680px] rounded-lg shadow-lg mb-12 lg:mb-32 relative'>
-          <video
-            className='h-full w-full rounded-lg'
-            controls
-            src={selectedVideo}
-            autoPlay
-          />
-        </div>
-      </div>
-
-      {/* Video Slider */}
+      {/* Video Cards */}
       <div className='bg-white py-4 lg:py-8'>
-        <div className='w-full lg:w-[100%] px-10 pb-10 mx-auto overflow-x-scroll scrollbar-thin scrollbar-thumb-[#ff7b54] scrollbar-track-[#EC9047]'>
-          <div className='flex space-x-4'>
-            {videoList.map(video => (
-              <motion.div
-                key={video.id}
-                className='min-w-[200px] lg:min-w-[300px] h-[150px] lg:h-[200px] rounded-lg bg-[#FFFFFF] drop-shadow-lg cursor-pointer'
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedVideo(video.src)}
-                animate={
-                  selectedVideo === video.src
-                    ? { scale: 1.1, borderColor: '#ff7b54' }
-                    : {}
-                }
-                transition={{ duration: 0.3 }}
-              >
+        <div className='grid grid-cols-1 my-20 lg:grid-cols-2  px-5 py-10 pb-10 gap-6'>
+          {videoList.map(video => (
+            <motion.div
+              key={video.id}
+              className='min-w-[200px] lg:min-w-[300px] h-[250px] lg:h-[300px] rounded-lg bg-[#FFFFFF] drop-shadow-lg cursor-pointer'
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handlePlayVideo(video)}
+              transition={{ duration: 0.3 }}
+            >
+              {playingVideo?.id === video.id ? (
+                video.isYouTube ? (
+                  <ReactPlayer
+                    url={video.src}
+                    playing
+                    controls
+                    width='100%'
+                    height='100%'
+                  />
+                ) : (
+                  <video
+                    src={video.src}
+                    className='w-full h-full object-cover rounded-lg'
+                    controls
+                    autoPlay
+                  />
+                )
+              ) : (
                 <img
-                  src={video.thumbnail}
-                  alt={`Thumbnail ${video.id}`}
+                  src={video.poster}
+                  alt='Video thumbnail'
                   className='w-full h-full object-cover rounded-lg'
                 />
-              </motion.div>
-            ))}
-          </div>
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
 
-      {/* Image Grid */}
-      <div className='grid grid-cols-1 my-20 lg:grid-cols-2 gap-4 px-5 lg:px-10 py-10'>
-        <div className='h-[300px] lg:h-[520px] '>
+      {/* Responsive Image Grid */}
+      <div className='grid grid-cols-1 my-20 lg:grid-cols-3 lg:gap-4 gap-10 px-5 py-10'>
+        <div className='h-full lg:h-[520px] shadow-lg rounded-lg'>
           <img
-            src='/public/Frame 185.png'
+            src='/Frame 185.png'
             alt='Grid Image 1'
             className='w-full h-full object-cover rounded-lg'
           />
         </div>
-        <div className='h-[300px] lg:h-[720px]'>
+        <div className='h-full lg:h-[520px] shadow-lg rounded-lg flex flex-col justify-center items-center'>
           <img
-            src='/public/Frame 187.png'
+            src='/discovercard.jpg'
             alt='Grid Image 2'
+            className='w-full h-full object-cover rounded-lg'
+          />
+          <p className='py-6 text-black Gilroy-Regular font-bold text-xl'>
+            Tacos n’ Cream touts healthful, lower-fat options
+          </p>
+          <Link to='https://www.columbian.com/news/2015/feb/05/tacos-n-cream-food-truck-vancouver/'>
+            <p className='pb-6 text-[#EC9047] text-lg cursor-pointer Gilroy-Regular font-normal'>
+              Read More
+            </p>
+          </Link>
+        </div>
+        <div className='h-full lg:h-[520px] shadow-lg rounded-lg'>
+          <img
+            src='/Frame 187.png'
+            alt='Grid Image 3'
             className='w-full h-full object-cover rounded-lg'
           />
         </div>

@@ -158,7 +158,7 @@ const Home = () => {
               where's the grease?
             </motion.p>
 
-            <motion.p
+            {/* <motion.p
               className='Gilroy-Regular font-normal text-lg text-[#FFFFFF] leading-6 mt-4 sm:mt-6 md:mt-8 lg:mt-10 w-full sm:w-3/4 md:w-2/3 lg:w-[65%] text-center'
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ const Home = () => {
               nutritious ingredients. Savor every bite, knowing each taco is
               crafted with the highest quality, chemical-free meat and bursting
               with vibrant, locally sourced flavors.
-            </motion.p>
+            </motion.p> */}
 
             <motion.img
               src='/Menubtn.svg'
@@ -187,7 +187,9 @@ const Home = () => {
           ref={menuRef}
           className='w-full mb-32 overflow-auto bg-[#FFFFFF]  text-black'
         >
-          <MenuSection />
+          <div>
+            <MenuSection />
+          </div>
         </div>
         <Footer />
       </div>
