@@ -155,7 +155,11 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              where's the grease Ⓡ ?
+              where's the greas
+              <span className='relative'>
+                e<span className='absolute text-xl left-4 -top-0'>Ⓡ</span>
+              </span>{' '}
+              &nbsp; ?
             </motion.p>
 
             {/* <motion.p
