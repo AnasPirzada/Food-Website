@@ -155,7 +155,7 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              where's the grease?
+              where's the grease Ⓡ ?
             </motion.p>
 
             {/* <motion.p

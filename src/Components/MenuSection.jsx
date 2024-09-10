@@ -49,7 +49,7 @@ export const MenuSection = () => {
             >
               <button>
                 <img src={tab.image} alt={tab.name} className='w-full h-full' />
-                <span className='text-lg pt-4 font-medium text-[#EC9047]'>
+                <span className='text-lg lowercase pt-4 font-medium text-[#EC9047]'>
                   {tab.name}
                 </span>
               </button>
